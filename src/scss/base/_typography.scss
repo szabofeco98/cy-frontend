@@ -1,0 +1,86 @@
+@use "../abstracts/colors";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+
+h1,
+h2,
+h6,
+.text,
+.term {
+  font-family: "Open Sans", sans-serif;
+}
+
+h3,
+h4,
+h5,
+.copyright,
+.warning,
+.label {
+  font-family: -apple-system, BlinkMacSystemFont, ".AppleSystemUIFont",
+    "Open Sans", sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  color: colors.$dark-gray;
+  line-height: 3rem;
+}
+
+h2 {
+  font-size: 3rem;
+  line-height: 4.4rem;
+  color: colors.$white;
+}
+
+h3 {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: colors.$dark-gray;
+}
+
+h4 {
+  font-size: 1.4rem;
+  line-height: 3rem;
+  color: colors.$white;
+}
+
+h5 {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: colors.$medium-dark-gray;
+}
+
+h6 {
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  color: colors.$medium-dark-gray;
+}
+
+.text {
+  font-size: 1.4rem;
+  line-height: 3rem;
+  color: colors.$white;
+}
+
+.warning {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: colors.$yellow;
+}
+
+.label {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: colors.$blue;
+}
+
+.term {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  color: colors.$medium-dark-gray;
+}
+
+.copyright {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: colors.$medium-dark-gray;
+}

@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+// Absracts
+@use "scss/abstracts/_colors.scss";
+
+// Base
+@use "scss/base/typography";
+@use "scss/base/base";
