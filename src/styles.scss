@@ -1,6 +1,8 @@
 // Absracts
-@use "scss/abstracts/_colors.scss";
+@use "scss/abstracts/colors.scss";
 
 // Base
 @use "scss/base/typography";
 @use "scss/base/base";
+
+@use "scss/theme/material-theme";

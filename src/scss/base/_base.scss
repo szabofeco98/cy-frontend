@@ -13,3 +13,10 @@ html {
 body {
   box-sizing: border-box;
 }
+
+div.mat-mdc-form-field-focus-overlay {
+  background-color: white;
+}
+div.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: white;
+}

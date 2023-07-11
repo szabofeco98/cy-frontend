@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cy-frontend';
-
-  constructor() {
-    const test = () => (true ? '' : '');
-  }
 }
