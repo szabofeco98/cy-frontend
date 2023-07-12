@@ -1,0 +1,30 @@
+@use "../../scss/abstracts/colors" as colors;
+
+.register-page {
+  height: 100%;
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  &__card {
+    padding: 2rem 3rem;
+
+    &__title {
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__form {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .button {
+    margin-left: auto;
+  }
+}

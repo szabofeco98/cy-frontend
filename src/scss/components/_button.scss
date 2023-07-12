@@ -1,0 +1,23 @@
+@use "../abstracts/colors" as colors;
+
+.button {
+  cursor: pointer;
+  width: fit-content;
+  border-radius: 6px;
+  padding: 0.5rem 3rem;
+  transition: 0.2s all;
+
+  &--primary {
+    background: colors.$blue;
+    border: colors.$blue;
+  }
+
+  &--outlined {
+    background-color: transparent;
+    border: 2px solid colors.$white;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}

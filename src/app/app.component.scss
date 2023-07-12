@@ -1,0 +1,11 @@
+.welcome-page {
+  display: flex;
+  height: 100vh;
+
+  &__login-form,
+  &__register-form {
+    flex-basis: 50%;
+    flex-grow: 1;
+    min-height: 100%;
+  }
+}
