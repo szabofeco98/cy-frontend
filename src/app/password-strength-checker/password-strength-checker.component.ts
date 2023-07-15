@@ -3,18 +3,20 @@ import {
   signal,
   inject,
   AfterViewInit,
-  Signal,
   DestroyRef,
 } from '@angular/core';
 import { MatFormField } from '@angular/material/form-field';
 import { getPasswordStrength } from '../utils/utils';
 import { tap } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-password-strength-checker',
   templateUrl: './password-strength-checker.component.html',
   styleUrls: ['./password-strength-checker.component.scss'],
+  standalone: true,
+  imports: [CommonModule],
 })
 export class PasswordStrengthCheckerComponent implements AfterViewInit {
   public strength = signal(1);

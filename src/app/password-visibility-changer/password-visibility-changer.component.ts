@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, HostListener, OnInit, inject, signal } from '@angular/core';
 import { MatFormField } from '@angular/material/form-field';
 
@@ -5,6 +6,8 @@ import { MatFormField } from '@angular/material/form-field';
   selector: 'app-password-visibility-changer',
   templateUrl: './password-visibility-changer.component.html',
   styleUrls: ['./password-visibility-changer.component.scss'],
+  standalone: true,
+  imports: [CommonModule],
 })
 export class PasswordVisibilityChangerComponent implements OnInit {
   public passwordIsVisible = signal(false);

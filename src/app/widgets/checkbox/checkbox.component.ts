@@ -1,5 +1,11 @@
 import { Component, Input, inject } from '@angular/core';
-import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  FormControl,
+  FormsModule,
+  NgControl,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { tap } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
@@ -7,6 +13,8 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   selector: 'app-checkbox',
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss'],
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule],
 })
 export class CheckboxComponent implements ControlValueAccessor {
   @Input({ required: true }) label!: string;
