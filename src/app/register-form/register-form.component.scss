@@ -1,14 +1,15 @@
-@use "../../scss/abstracts/colors" as colors;
+@use "src/scss/abstracts/colors" as colors;
+@use "src/scss/abstracts/mixins" as mixins;
 
 .register-page {
   height: 100%;
-
   align-items: center;
   display: flex;
   justify-content: center;
 
   &__card {
     padding: 2rem 3rem;
+    margin-bottom: 0.5rem;
 
     &__title {
       display: flex;
@@ -22,6 +23,28 @@
     display: flex;
     gap: 1rem;
     flex-direction: column;
+
+    &__password-suffix {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+  }
+
+  &__copyright-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    &__others {
+      display: flex;
+      gap: 0.5rem;
+
+      & div {
+        @include mixins.circle(0.5rem, colors.$medium-gray);
+      }
+    }
   }
 
   .button {

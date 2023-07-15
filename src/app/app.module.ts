@@ -10,12 +10,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { PasswordVisibilityChangerComponent } from './password-visibility-changer/password-visibility-changer.component';
 import { PasswordStrengthCheckerComponent } from './password-strength-checker/password-strength-checker.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginFormComponent, RegisterFormComponent, CheckboxComponent, PasswordVisibilityChangerComponent, PasswordStrengthCheckerComponent],
+  declarations: [
+    AppComponent,
+    LoginFormComponent,
+    RegisterFormComponent,
+    CheckboxComponent,
+    PasswordVisibilityChangerComponent,
+    PasswordStrengthCheckerComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,6 +33,7 @@ import { PasswordStrengthCheckerComponent } from './password-strength-checker/pa
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

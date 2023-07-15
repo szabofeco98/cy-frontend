@@ -1,4 +1,5 @@
-@use "../../scss/abstracts/colors" as colors;
+@use "src/scss/abstracts/colors" as colors;
+@use "src/scss/abstracts/mixins" as mixins;
 
 .checkbox-container {
   display: flex;
@@ -12,10 +13,8 @@
 
     &::before {
       content: "";
-      width: 1.5rem;
-      height: 1.5rem;
-      border: 0.2rem solid colors.$blue;
-      border-radius: 100%;
+      @include mixins.circle(1.5rem, colors.$blue, 0.2rem);
+      background-color: colors.$white;
     }
   }
 

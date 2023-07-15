@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { AuthenticationValidators } from '../validators/authentication-validators';
 
 @Component({
   selector: 'app-register-form',
@@ -13,7 +14,7 @@ export class RegisterFormComponent {
 
   public form = this.fb.group({
     remember: null,
-    password: null,
+    password: [null, AuthenticationValidators.passwordStrengthValidator],
     email: null,
   });
 
