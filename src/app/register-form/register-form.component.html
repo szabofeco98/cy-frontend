@@ -1,39 +1,35 @@
 <section class="register-page">
   <div>
-    <mat-card class="register-page__card">
-      <mat-card-title class="register-page__card__title">
+    <div class="card register-page__card">
+      <div class="register-page__card__title">
         <h1>Welcome to Acme.</h1>
         <h6>Create your account by filling the form bellow.</h6>
-      </mat-card-title>
+      </div>
 
       <form
         [formGroup]="form"
         class="register-page__form"
         (submit)="register()"
       >
-        <mat-form-field style="font-size: 1.6rem" color="primary">
-          <mat-label>Email</mat-label>
-          <input formControlName="email" matInput />
-        </mat-form-field>
-        <mat-form-field style="font-size: 1.6rem" color="primary">
-          <mat-label>Password</mat-label>
-          <input formControlName="password" type="password" matInput />
-          <div class="register-page__form__password-suffix" matSuffix>
-            <app-password-visibility-changer />
-            <app-password-strength-checker />
-          </div>
-          <mat-error
-            *ngIf="form.get('password')?.hasError('passwordStrengthError')"
-          >
-            <span class="warning">Password is too weak</span>
-          </mat-error>
-        </mat-form-field>
+        <div class="register-page__form__input-container">
+          <app-input formControlName="email" label="Email" />
+          <app-input formControlName="password" label="Password">
+            <div
+              class="register-page__form__input-container__password-suffix"
+              appSuffix
+            >
+              <app-password-visibility-changer />
+              <app-password-strength-checker />
+            </div>
+          </app-input>
+        </div>
+
         <app-checkbox formControlName="remember" label="Remember me." />
         <button class="button button--primary">
           <span class="text">Sign up</span>
         </button>
       </form>
-    </mat-card>
+    </div>
     <div class="register-page__copyright-container">
       <p class="copyright">@2015 Acme, Inc.</p>
       <p class="term">Terms</p>

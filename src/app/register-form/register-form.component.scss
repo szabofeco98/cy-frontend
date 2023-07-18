@@ -15,20 +15,26 @@
       display: flex;
       gap: 1rem;
       flex-direction: column;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
   }
 
   &__form {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     flex-direction: column;
 
-    &__password-suffix {
+    &__input-container {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
+      gap: 3rem;
+      flex-direction: column;
+
+      &__password-suffix {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
     }
   }
 
@@ -36,6 +42,7 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+    margin-top: 2rem;
 
     &__others {
       display: flex;

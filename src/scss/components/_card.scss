@@ -1,0 +1,8 @@
+@use "src/scss/abstracts/colors" as colors;
+
+.card {
+  background-color: colors.$white;
+  border: 0.1rem solid colors.$gray;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+}

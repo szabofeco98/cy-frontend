@@ -1,1 +1,18 @@
-<p>input works!</p>
+<div class="container">
+  <input
+    class="input term"
+    [type]="type"
+    #input
+    [formControl]="control"
+    [ngClass]="{ 'input--active': inputIsActive() }"
+  />
+  <label class="input-label" for="id" (click)="input.focus()">
+    <span class="label" [ngClass]="{ label: inputIsActive() || input.focus }">
+      {{ label }}
+    </span>
+  </label>
+  <div class="suffix" *ngIf="appSuffix">
+    <ng-content select="[appSuffix]"></ng-content>
+  </div>
+</div>
+<ng-content></ng-content>

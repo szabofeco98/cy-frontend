@@ -1,0 +1,61 @@
+@use "src/scss/abstracts/colors" as colors;
+
+@mixin active-label() {
+  scale: (0.8);
+  transform: translate(-0.2rem, -2rem);
+}
+
+@mixin inactive-label() {
+  scale: (1);
+}
+
+.container {
+  position: relative;
+  font-size: 16px;
+
+  .input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid colors.$medium-dark-gray;
+    padding: 0.5rem;
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid colors.$blue;
+
+      & + .input-label {
+        & .label {
+          color: colors.$blue;
+        }
+        @include active-label();
+      }
+    }
+
+    &:not(:focus):not(&--active) + .input-label {
+      @include inactive-label();
+    }
+
+    &--active + .input-label {
+      @include active-label();
+    }
+  }
+
+  .input-label {
+    transition: 0.2s;
+    position: absolute;
+    top: 0;
+    left: 0.5rem;
+    cursor: text;
+
+    & .label {
+      color: colors.$dark-gray;
+    }
+  }
+
+  .suffix {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0;
+  }
+}

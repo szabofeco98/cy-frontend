@@ -1,4 +1,4 @@
-@use "../abstracts/colors" as colors;
+@use "src/scss/abstracts/colors" as colors;
 
 *,
 *::after,
@@ -16,4 +16,3 @@ body {
   box-sizing: border-box;
   background-color: colors.$bone-white;
 }
-
