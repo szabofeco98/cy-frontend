@@ -12,6 +12,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { SuffixDirective } from './suffix.directive';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-input',
@@ -24,6 +25,7 @@ import { SuffixDirective } from './suffix.directive';
     BaseInputDirective,
     CommonModule,
     SuffixDirective,
+    TranslateModule,
   ],
   providers: [{ provide: BaseInputDirective, useExisting: InputComponent }],
 })

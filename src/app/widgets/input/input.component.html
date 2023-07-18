@@ -8,7 +8,7 @@
   />
   <label class="input-label" for="id" (click)="input.focus()">
     <span class="label" [ngClass]="{ label: inputIsActive() || input.focus }">
-      {{ label }}
+      {{ label | translate }}
     </span>
   </label>
   <div class="suffix" *ngIf="appSuffix">

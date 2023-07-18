@@ -7,6 +7,7 @@ import { PasswordVisibilityChangerComponent } from '../password-visibility-chang
 import { CommonModule } from '@angular/common';
 import { InputComponent } from '../widgets/input/input.component';
 import { SuffixDirective } from '../widgets/input/suffix.directive';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register-form',
@@ -22,6 +23,7 @@ import { SuffixDirective } from '../widgets/input/suffix.directive';
     CommonModule,
     InputComponent,
     SuffixDirective,
+    TranslateModule,
   ],
 })
 export class RegisterFormComponent {

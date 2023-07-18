@@ -2,8 +2,8 @@
   <div>
     <div class="card register-page__card">
       <div class="register-page__card__title">
-        <h1>Welcome to Acme.</h1>
-        <h6>Create your account by filling the form bellow.</h6>
+        <h1>{{ "REGISTER_PAGE.WELCOME" | translate }}</h1>
+        <h6>{{ "REGISTER_PAGE.TITLE" | translate }}</h6>
       </div>
 
       <form
@@ -12,8 +12,8 @@
         (submit)="register()"
       >
         <div class="register-page__form__input-container">
-          <app-input formControlName="email" label="Email" />
-          <app-input formControlName="password" label="Password">
+          <app-input formControlName="email" label="REGISTER_PAGE.EMAIL" />
+          <app-input formControlName="password" label="REGISTER_PAGE.PASSWORD">
             <div
               class="register-page__form__input-container__password-suffix"
               appSuffix
@@ -24,16 +24,19 @@
           </app-input>
         </div>
 
-        <app-checkbox formControlName="remember" label="Remember me." />
+        <app-checkbox
+          formControlName="remember"
+          label="REGISTER_PAGE.REMEMBER_ME"
+        />
         <button class="button button--primary">
-          <span class="text">Sign up</span>
+          <span class="text">{{ "REGISTER_PAGE.SIGN_UP" | translate }}</span>
         </button>
       </form>
     </div>
     <div class="register-page__copyright-container">
       <p class="copyright">@2015 Acme, Inc.</p>
-      <p class="term">Terms</p>
-      <p class="term">privacy</p>
+      <p class="term">{{ "REGISTER_PAGE.TERMS" | translate }}</p>
+      <p class="term">{{ "REGISTER_PAGE.PRIVACY" | translate }}</p>
       <div class="register-page__copyright-container__others">
         <div></div>
         <div></div>
