@@ -10,6 +10,8 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { baseInterceptor } from './app/interceptors/base.interceptor';
+import { provideRouter } from '@angular/router';
+import { routes } from './app/app.routes';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, '/assets/i18n/', '.json');
@@ -18,6 +20,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 bootstrapApplication(AppComponent, {
   providers: [
     provideHttpClient(withInterceptors([baseInterceptor])),
+    provideRouter(routes),
     provideAnimations(),
     importProvidersFrom(
       TranslateModule.forRoot({

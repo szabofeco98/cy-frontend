@@ -1,9 +1,9 @@
 import { Component, inject, Signal } from '@angular/core';
-import { getPasswordStrength } from '../utils/utils';
+import { getPasswordStrength } from '../../utils/utils';
 import { map } from 'rxjs/operators';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
-import { BaseInputDirective } from '../widgets/base-input.directive';
+import { BaseInputDirective } from '../base-input.directive';
 
 @Component({
   selector: 'app-password-strength-checker',

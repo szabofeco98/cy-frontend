@@ -6,12 +6,12 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { CheckboxComponent } from '../widgets/checkbox/checkbox.component';
-import { PasswordStrengthCheckerComponent } from '../password-strength-checker/password-strength-checker.component';
-import { PasswordVisibilityChangerComponent } from '../password-visibility-changer/password-visibility-changer.component';
+import { CheckboxComponent } from '../../../widgets/checkbox/checkbox.component';
+import { PasswordStrengthCheckerComponent } from '../../../widgets/password-strength-checker/password-strength-checker.component';
+import { PasswordVisibilityChangerComponent } from '../../../widgets/password-visibility-changer/password-visibility-changer.component';
 import { CommonModule } from '@angular/common';
-import { InputComponent } from '../widgets/input/input.component';
-import { SuffixDirective } from '../widgets/input/suffix.directive';
+import { InputComponent } from '../../../widgets/input/input.component';
+import { SuffixDirective } from '../../../widgets/input/suffix.directive';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -39,7 +39,7 @@ export class RegisterFormComponent {
 
   public static generateForm = (fb: FormBuilder) =>
     fb.group({
-      remember: null,
+      rememberMe: null,
       password: [null],
       email: null,
     });

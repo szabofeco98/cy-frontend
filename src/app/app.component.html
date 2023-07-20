@@ -1,15 +1,5 @@
-<section>
-  <form
-    [formGroup]="form"
-    class="main-page"
-    [ngClass]="{ 'main-page--blur': loading() }"
-  >
-    <app-register-form class="main-page__register-form"></app-register-form>
-    <app-login-form
-      (login)="onLogin()"
-      class="main-page__login-form"
-    ></app-login-form>
-  </form>
+<section [ngClass]="{ 'main-page--blur': loading() }">
+  <router-outlet />
 </section>
 <span *ngIf="loading()" class="loading-circle"></span>
 <app-notification-bar />

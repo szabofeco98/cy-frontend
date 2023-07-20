@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, inject, signal } from '@angular/core';
-import { InputComponent } from '../widgets/input/input.component';
+import { InputComponent } from '../input/input.component';
 
 @Component({
   selector: 'app-password-visibility-changer',
