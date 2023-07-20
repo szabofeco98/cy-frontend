@@ -1,0 +1,21 @@
+@use "src/scss/abstracts/colors" as colors;
+
+.notification {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 45%;
+  font-size: 2rem;
+  padding: 1.5rem;
+  background-color: colors.$white;
+  border-radius: 5px;
+
+  &--success {
+    border: 0.2rem solid colors.$turquoise;
+    color: colors.$turquoise;
+  }
+
+  &--error {
+    border: 0.2rem solid colors.$red;
+    color: colors.$red;
+  }
+}

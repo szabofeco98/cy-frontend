@@ -1,10 +1,15 @@
 import { AppComponent } from './app/app.component';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
+import {
+  HttpClient,
+  provideHttpClient,
+  withInterceptors,
+} from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { baseInterceptor } from './app/interceptors/base.interceptor';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, '/assets/i18n/', '.json');
@@ -12,7 +17,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideHttpClient(),
+    provideHttpClient(withInterceptors([baseInterceptor])),
     provideAnimations(),
     importProvidersFrom(
       TranslateModule.forRoot({

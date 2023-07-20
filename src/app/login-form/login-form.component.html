@@ -10,7 +10,7 @@
       <h2>{{ "LOGIN_PAGE.TITLE" | translate }}</h2>
       <h4>{{ "LOGIN_PAGE.CONTENT" | translate }}</h4>
 
-      <button class="button button--outlined">
+      <button class="button button--outlined" (click)="login.emit()">
         <span class="text">{{ "LOGIN_PAGE.LOG_IN" | translate }}</span>
       </button>
     </div>

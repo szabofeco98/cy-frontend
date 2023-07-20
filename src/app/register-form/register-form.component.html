@@ -6,11 +6,7 @@
         <h6>{{ "REGISTER_PAGE.TITLE" | translate }}</h6>
       </div>
 
-      <form
-        [formGroup]="form"
-        class="register-page__form"
-        (submit)="register()"
-      >
+      <div formGroupName="registerForm" class="register-page__form">
         <div class="register-page__form__input-container">
           <app-input formControlName="email" label="REGISTER_PAGE.EMAIL" />
           <app-input formControlName="password" label="REGISTER_PAGE.PASSWORD">
@@ -28,10 +24,10 @@
           formControlName="remember"
           label="REGISTER_PAGE.REMEMBER_ME"
         />
-        <button class="button button--primary">
+        <button class="button button--primary" (click)="registration.emit()">
           <span class="text">{{ "REGISTER_PAGE.SIGN_UP" | translate }}</span>
         </button>
-      </form>
+      </div>
     </div>
     <div class="register-page__copyright-container">
       <p class="copyright">@2015 Acme, Inc.</p>

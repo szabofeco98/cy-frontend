@@ -1,5 +1,4 @@
-import { Component, inject } from '@angular/core';
-import { AuthenticationService } from '../services/authentication-service.service';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -10,5 +9,5 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [TranslateModule],
 })
 export class LoginFormComponent {
-  private service = inject(AuthenticationService);
+  @Output() login = new EventEmitter<void>();
 }

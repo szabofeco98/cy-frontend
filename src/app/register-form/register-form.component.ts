@@ -1,6 +1,11 @@
-import { Component, inject } from '@angular/core';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthenticationValidators } from '../validators/authentication-validators';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
+import {
+  ControlContainer,
+  FormBuilder,
+  FormGroupDirective,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { CheckboxComponent } from '../widgets/checkbox/checkbox.component';
 import { PasswordStrengthCheckerComponent } from '../password-strength-checker/password-strength-checker.component';
 import { PasswordVisibilityChangerComponent } from '../password-visibility-changer/password-visibility-changer.component';
@@ -25,15 +30,17 @@ import { TranslateModule } from '@ngx-translate/core';
     SuffixDirective,
     TranslateModule,
   ],
+  viewProviders: [
+    { provide: ControlContainer, useExisting: FormGroupDirective },
+  ],
 })
 export class RegisterFormComponent {
-  public form = inject(FormBuilder).group({
-    remember: null,
-    password: [null, AuthenticationValidators.passwordStrengthValidator],
-    email: null,
-  });
+  @Output() registration = new EventEmitter<void>();
 
-  public register(): void {
-    console.log(this.form.value);
-  }
+  public static generateForm = (fb: FormBuilder) =>
+    fb.group({
+      remember: null,
+      password: [null],
+      email: null,
+    });
 }

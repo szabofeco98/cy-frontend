@@ -1,5 +1,5 @@
 @mixin circle($radius, $color, $outlineWidth: 1px) {
-  border-radius: 100%;
+  border-radius: 50%;
   width: $radius;
   height: $radius;
   border: $outlineWidth solid $color;

@@ -1,6 +1,7 @@
 // Absracts
 @use "scss/abstracts/colors.scss";
 @use "scss/abstracts/mixins.scss";
+@use "scss/abstracts/animations.scss";
 
 // Base
 @use "scss/base/typography";
@@ -9,3 +10,4 @@
 // Components
 @use "scss/components/button";
 @use "scss/components/card";
+@use "scss/components/loading-circle";

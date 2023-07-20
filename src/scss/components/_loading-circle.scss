@@ -1,0 +1,13 @@
+@use "src/scss/abstracts/colors" as colors;
+@use "src/scss/abstracts/mixins" as mixins;
+
+.loading-circle {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 47%;
+  @include mixins.circle(7rem, colors.$blue, 1.2rem);
+  background-color: transparent;
+  border-bottom: 1.2rem solid transparent;
+  animation: spin 1s linear infinite;
+}

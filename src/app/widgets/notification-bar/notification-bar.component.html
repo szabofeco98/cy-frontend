@@ -1,0 +1,11 @@
+<span
+  *ngIf="notification() as notify"
+  class="notification warning"
+  appDeleteMessage
+  [ngClass]="{
+    'notification--error': notify.type === 'error',
+    'notification--success': notify.type === 'success'
+  }"
+>
+  {{ notify.message | translate }}
+</span>

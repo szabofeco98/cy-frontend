@@ -1,4 +1,4 @@
-.welcome-page {
+.main-page {
   display: flex;
   flex-wrap: wrap;
   min-height: 100vh;
@@ -8,5 +8,9 @@
     flex-basis: 50%;
     flex-grow: 1;
     min-width: 30rem;
+  }
+
+  &--blur {
+    filter: blur(0.5rem);
   }
 }

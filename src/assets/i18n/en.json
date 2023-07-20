@@ -1,4 +1,7 @@
 {
+  "COMMON": {
+    "SUCCESSFUL_LOGIN": "Successful login"
+  },
   "REGISTER_PAGE": {
     "WELCOME": "Welcome to Acme.",
     "TITLE": "Create your account by filling the form bellow.",
