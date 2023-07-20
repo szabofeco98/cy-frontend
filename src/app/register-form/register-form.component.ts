@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {
   ControlContainer,
   FormBuilder,

@@ -1,14 +1,7 @@
-import {
-  Component,
-  signal,
-  inject,
-  AfterViewInit,
-  DestroyRef,
-  Signal,
-} from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
 import { getPasswordStrength } from '../utils/utils';
-import { map, tap } from 'rxjs/operators';
-import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
+import { map } from 'rxjs/operators';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { BaseInputDirective } from '../widgets/base-input.directive';
 
