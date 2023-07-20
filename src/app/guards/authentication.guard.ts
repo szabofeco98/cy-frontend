@@ -9,7 +9,7 @@ export function authenticationGuard(): CanActivateFn {
     if (toSignal(inject(AuthenticationService).loggedInUser)()?.id) {
       return true;
     } else {
-      inject(Router).navigate([Routes.HOME]);
+      inject(Router).navigate([Routes.WELCOME]);
       return false;
     }
   };

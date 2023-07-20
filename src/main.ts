@@ -5,17 +5,27 @@ import {
   provideHttpClient,
   withInterceptors,
 } from '@angular/common/http';
-import { importProvidersFrom } from '@angular/core';
+import { APP_INITIALIZER, importProvidersFrom } from '@angular/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { baseInterceptor } from './app/interceptors/base.interceptor';
 import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
+import { AuthenticationService } from './app/services/authentication.service';
+import { User } from './app/interfaces/user';
+import { LocalStorageService } from './app/services/local-storage.service';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, '/assets/i18n/', '.json');
 }
+
+export const loginInitializer =
+  (authService: AuthenticationService, storageService: LocalStorageService) =>
+  () => {
+    const user = storageService.getItem('cy-user') as Omit<User, 'rememberMe'>;
+    return authService.login({ ...user, rememberMe: true });
+  };
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -32,6 +42,12 @@ bootstrapApplication(AppComponent, {
         },
       })
     ),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: loginInitializer,
+      deps: [AuthenticationService, LocalStorageService],
+      multi: true,
+    },
   ],
 })
   // eslint-disable-next-line no-console

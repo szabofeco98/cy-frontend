@@ -16,5 +16,8 @@
     "TITLE": "Do you already have an account?",
     "CONTENT": "That's awesome! You can login by clicking on the button bellow. To skip this next time, you can ask us to remember your login credentials",
     "LOG_IN": "Log in"
+  },
+  "HOME_PAGE": {
+    "LOG_OUT": "Log out"
   }
 }

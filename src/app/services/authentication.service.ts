@@ -20,16 +20,6 @@ export class AuthenticationService {
     return this._loggedInUser.asObservable();
   }
 
-  constructor() {
-    const user = this.localStorageService.getItem('cy-user') as Omit<
-      User,
-      'rememberMe'
-    >;
-    if (user) {
-      this.login({ ...user, rememberMe: true }).subscribe();
-    }
-  }
-
   public login({
     email,
     password,
@@ -45,5 +35,10 @@ export class AuthenticationService {
           this.localStorageService.setItem('cy-user', { email, password });
         })
       );
+  }
+
+  public logOut(): void {
+    this._loggedInUser.next(null);
+    this.localStorageService.removeItem('cy-user');
   }
 }
