@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { BehaviorSubject, Observable, filter, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { LoginResponse, User } from '../interfaces/user';
 import { LocalStorageService } from './local-storage.service';
 
@@ -29,10 +29,11 @@ export class AuthenticationService {
       .post<LoginResponse>('authenticate', { data: { email, password } })
       .pipe(
         tap((value) => this._loggedInUser.next(value.result)),
-        filter((value) => !!value.result.id && !!rememberMe),
-        tap(() => {
-          this.localStorageService.removeItem('cy-user');
-          this.localStorageService.setItem('cy-user', { email, password });
+        tap((value) => {
+          if (!!value.result.id && !!rememberMe) {
+            this.localStorageService.removeItem('cy-user');
+            this.localStorageService.setItem('cy-user', { email, password });
+          }
         })
       );
   }

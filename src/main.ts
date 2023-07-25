@@ -15,6 +15,7 @@ import { routes } from './app/app.routes';
 import { AuthenticationService } from './app/services/authentication.service';
 import { User } from './app/interfaces/user';
 import { LocalStorageService } from './app/services/local-storage.service';
+import { of } from 'rxjs';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, '/assets/i18n/', '.json');
@@ -24,7 +25,10 @@ export const loginInitializer =
   (authService: AuthenticationService, storageService: LocalStorageService) =>
   () => {
     const user = storageService.getItem('cy-user') as Omit<User, 'rememberMe'>;
-    return authService.login({ ...user, rememberMe: true });
+    if (user) {
+      return authService.login({ ...user, rememberMe: true });
+    }
+    return of(true);
   };
 
 bootstrapApplication(AppComponent, {
